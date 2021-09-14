@@ -1,0 +1,27 @@
+{
+  "name": "json-to-kafka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "write": "node start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nielemptiness/json-to-kafka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nielemptiness/json-to-kafka/issues"
+  },
+  "homepage": "https://github.com/nielemptiness/json-to-kafka#readme",
+  "dependencies": {
+    "install": "^0.13.0",
+    "kafkajs": "^1.15.0",
+    "npm": "^7.23.0"
+  }
+}
