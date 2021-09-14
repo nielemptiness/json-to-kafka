@@ -21,13 +21,12 @@ async function Produce() {
                         messages: [ { value: JSON.stringify(element) } ]
                     });
                       
-            })().catch(console.error); 
+            })(); 
         });
     }
     catch (error) {
         console.log('failed on insert');
         console.log(error);
-        throw "err";
     }
     finally {
         await producer.disconnect();
@@ -35,6 +34,4 @@ async function Produce() {
     }
 }
 
-(async () => {
-   await Produce();
-   })(); 
+module.exports = Produce; 

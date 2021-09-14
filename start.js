@@ -1,3 +1,5 @@
 const Produce = require('./src/kafkaProducer');
 
-Produce();
+(async () => {
+    await Produce();
+    })().catch(console.error);

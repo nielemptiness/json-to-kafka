@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 const path = require('path');
-const jsonPath = 'inputData.json';
+const jsonPath = 'src/inputData.json';
 
 function getJsonData() {
 
