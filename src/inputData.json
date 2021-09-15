@@ -2,10 +2,12 @@
    "data": 
     [
         {
-            "kek": true
+            "key": 1,
+            "value" : { "kek": true }
         },
         {
-            "kek": false
+            "key": 2,
+            "value" : { "kek": false }
         }
     ] 
 }

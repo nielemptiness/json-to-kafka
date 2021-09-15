@@ -13,15 +13,20 @@ async function Produce() {
         await producer.connect();
         console.log('connected!');
 
-        json.data.forEach(element => {
+        json.data.forEach(element => async () => {
             console.log("Started iterating over json...");
-            (async () => {
+            //(async () => {
                 await producer.send({
                         topic: topic,
-                        messages: [ { value: JSON.stringify(element) } ]
+                        messages: [ 
+                            { 
+                                key: element.key,
+                                value: JSON.stringify(element.value) 
+                            } 
+                        ]
                     });
                       
-            })(); 
+            //})(); 
         });
     }
     catch (error) {
