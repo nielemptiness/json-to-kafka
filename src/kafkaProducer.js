@@ -13,21 +13,22 @@ async function Produce() {
         await producer.connect();
         console.log('connected!');
 
-        json.data.forEach(element => {
-            console.log("Started iterating over json...");
-            (async () => {
+
+        for (const key in json.data) {
+            if (Object.hasOwnProperty.call(json.data, key)) {
+                const element = json.data[key];
                 await producer.send({
-                        topic: topic,
-                        messages: [ 
-                            { 
-                                key: JSON.stringify(element.key),
-                                value: JSON.stringify(element.value) 
-                            } 
-                        ]
-                    });
-                      
-            })(); 
-        });
+                    topic: topic,
+                    messages: [ 
+                        { 
+                            key: JSON.stringify(element.key),
+                            value: JSON.stringify(element.value) 
+                        } 
+                    ]
+                }); 
+                console.log("wrote elem with key " + element.key);
+            }
+        }
     }
     catch (error) {
         console.log('failed on insert');
