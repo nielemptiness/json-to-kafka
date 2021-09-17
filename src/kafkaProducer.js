@@ -26,7 +26,7 @@ async function Produce() {
                         } 
                     ]
                 }); 
-                console.log("wrote elem with key " + element.key);
+                console.log("wrote elem with key " + element.key + " to topic: " + config.kafka_topic + " at kafka: " + config.brokers);
             }
         }
     }
